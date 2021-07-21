@@ -1,21 +1,22 @@
 # online-judge
 This repository contains code for the event of Reverse Coding held during the techfest of Credenz 20' (21') in my college.
 
-# RC-Round-2 BACKEND CODE
+# Description
+This project is similar to competitive coding platforms like codechef where the user submits their code and we run it on the server. The user's code is scored according to the number of test cases passed.
 
-So, here is a quick guide for installation of this whole game on your PC and host it locally!
+Here is a quick guide for installing this project on your PC and hosting it locally:
 
-### 1) Clone the Project
+### 1) Cloning the project
 
-clone the project by command:
+clone the project by the following command:
 
-    git clone https://github.com/clash-rc-round-2/RC-Round-2.git
+    git clone https://github.com/deshpandeneil/online-judge.git
 
-after clone you will find the a directory naming Clash-Round-2 where you cloned this project.
+change directory and move into the cloned project.
 
     cd RC-Round-2/
 
-### 2) creating virtual env and installing required packages
+### 2) Creating virtual env and installing required packages
 
 install python3-env and pip for creating a envirnoment.
 
@@ -25,15 +26,15 @@ create a virtual envirnoment:
 
     python3 -m venv env
 
-activate this envirnoment:
+activate the envirnoment:
 
     source env/bin/activate
 
-installing all required packages which are present in requirement.txt:
+install all the required packages which are present in requirement.txt:
 
     pip install -r requirements.txt
 
-installing all the sandboxing packages, run these commands:
+install all the sandbox packages.
 
     sudo apt-get install autoconf libtool gpref
     python3 -m pip install cython
@@ -47,11 +48,11 @@ installing all the sandboxing packages, run these commands:
     LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
     export LD_LIBRARY_PATH
 
-You are almost Done! :wink:
+You are almost Done!
 
 ### 3) Running the code Setting up timer and starting game
 
-Run this game by command:
+Run this project by command:
 
     python3 manage.py runserver
 
