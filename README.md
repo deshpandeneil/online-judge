@@ -31,22 +31,30 @@ activate the virtual envirnoment:
 ### 3. Installing required packages
 
 execute the following command to install all requirements:
-
+    
+    cd online-judge/
     pip install -r requirements.txt
 
 install all the required sandbox packages using the following commands:
 
-    sudo apt-get install autoconf libtool gpref
-    python3 -m pip install cython
+    sudo apt-get install autoconf libtool gperf
+    pip install cython
     git clone https://github.com/seccomp/libseccomp
     cd libseccomp
+    sudo chmod +x autogen.sh
+    ./autogen.sh
+    ./configure
     make
     sudo make install
     cd src/python/
-    python3 setup.py
-    cd ../../..
+    
+Open the the setup.py file and change the version variable value on line 32 to 2.4.4
+    
+    python3 setup.py install
+    cd ../..
     LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
     export LD_LIBRARY_PATH
+    cd ..
 
 # Running the project on localhost
 
@@ -89,7 +97,7 @@ Here is the structure for every `question` directory within the 4 `standard` dir
 ├── quota5.txt
 └── quota6.txt
 ```
-The `quota` files must contain the time limit on first line followed by the memory limit on the second line for the selected question.
+The `quota` files must contain the time limit (in seconds) on first line followed by the memory limit (in bytes) on the second line for the selected question.
 
 2. Question directories within `executable`
 ```bash
@@ -131,8 +139,12 @@ change directory and move into the cloned project.
 
     cd online-judge/
 
-Run this project by command:
-
+Run this project by following commands:
+    
+    python3 manage.py makemigrations
+    python3 manage.py makemigrations Users
+    python3 manage.py migrate
+    python3 manage.py createsuperuser
     python3 manage.py runserver
 
 hit the timer before starting, by appending the url(i.e. 127.0.0.1:8000) by "/timer/" in new tab and then by clicking on submit button, after clicking submit you should get "timer is set", come back to main page again and wait till the game start
