@@ -50,7 +50,7 @@ You are almost Done!
 
 change directory and move into the cloned project.
 
-    cd online-judge
+    cd online-judge/
 
 Run this project by command:
 
