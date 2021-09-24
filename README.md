@@ -6,19 +6,15 @@ This project is similar to competitive coding platforms like codechef where the 
 
 Here is a quick guide for installing this project on your PC and hosting it locally:
 
-### 1) Cloning the project
+### 1. Cloning the project
 
 clone the project by the following command:
 
     git clone https://github.com/deshpandeneil/online-judge.git
 
-change directory and move into the cloned project.
+### 2. Creating virtual env and installing required packages
 
-    cd RC-Round-2/
-
-### 2) Creating virtual env and installing required packages
-
-install python3-env and pip for creating a envirnoment.
+install python3-env and pip (if not already installed) for creating a virtual develpopment envirnoment.
 
     sudo apt-get install python3-venv python3-pip
 
@@ -26,7 +22,7 @@ create a virtual envirnoment:
 
     python3 -m venv env
 
-activate the envirnoment:
+activate the virtual envirnoment:
 
     source env/bin/activate
 
@@ -50,7 +46,11 @@ install all the sandbox packages.
 
 You are almost Done!
 
-### 3) Running the code Setting up timer and starting game
+### 3. Running the code Setting up timer and starting game
+
+change directory and move into the cloned project.
+
+    cd online-judge
 
 Run this project by command:
 
