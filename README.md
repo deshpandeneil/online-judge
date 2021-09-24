@@ -33,12 +33,12 @@ activate the virtual envirnoment:
 execute the following command to install all requirements:
     
     cd online-judge/
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
 
 install all the required sandbox packages using the following commands:
 
     sudo apt-get install autoconf libtool gperf
-    pip install cython
+    pip3 install cython
     git clone https://github.com/seccomp/libseccomp
     cd libseccomp
     sudo chmod +x autogen.sh
@@ -48,7 +48,7 @@ install all the required sandbox packages using the following commands:
     sudo make install
     cd src/python/
     
-Open the the setup.py file and change the version variable value on line 32 to 2.4.4
+Open the the `setup.py` file and set `version = "2.4.4"` on line 32
     
     python3 setup.py install
     cd ../..
@@ -133,18 +133,20 @@ The `output` directory must contain `expected_output` files for the total number
 
 The `users_code` directory will get populated automatically as and when users are registered through the registration page present in the project.
 
-### 3. Running the code Setting up timer and starting game
-
-change directory and move into the cloned project.
-
-    cd online-judge/
-
-Run this project by following commands:
+Run migrations on the database by executing the following commands:
     
     python3 manage.py makemigrations
     python3 manage.py makemigrations Users
     python3 manage.py migrate
+
+Create an administrator user using the following command:
+
     python3 manage.py createsuperuser
+
+Finally, start the development server with the following command:
+
     python3 manage.py runserver
 
-hit the timer before starting, by appending the url(i.e. 127.0.0.1:8000) by "/timer/" in new tab and then by clicking on submit button, after clicking submit you should get "timer is set", come back to main page again and wait till the game start
+Once localhost has started, go to the `/admin` url and login using the superuser credentials. After logging in, go to `/timer` url and set the time duration for the event (in seconds).
+
+Users can be registered only by the admin via the `/register` url.
