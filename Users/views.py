@@ -141,7 +141,7 @@ def register(request):
                 os.system('mkdir ' + user_directory)
 
             messages.success(request, 'Your account has been created.')
-            return redirect('login')  # redirect to login page after registration
+            return render(request, 'Users/register.html')  # redirect to login page after registration
         elif request.method == 'GET':
             return render(request, 'Users/register.html')  # render registration form in case of get request
         return HttpResponse("Invalid request type.")  # only get and post requests are allowed
